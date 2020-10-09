@@ -7,7 +7,7 @@ sources:
 
     loader: fivetran
     loaded_at_field: _fivetran_synced
-      
+
     freshness:
       warn_after: {count: 72, period: hour}
       error_after: {count: 168, period: hour}
@@ -16,7 +16,7 @@ sources:
     tables:
       - name: ticket
         description: >
-          Tickets are the means through which your end users (customers) communicate with agents in Zendesk Support. Tickets can 
+          Tickets are the means through which your end users (customers) communicate with agents in Zendesk Support. Tickets can
           originate from a number of channels, including email, Help Center, chat, phone call, Twitter, Facebook, or the API.
         loaded_at_field: _fivetran_synced
         columns:
@@ -24,7 +24,7 @@ sources:
             description: Automatically assigned when the ticket is created
             tests:
                 - unique
-                - not_null  
+                - not_null
           - name: url
             description: The API url of this ticket
           - name: assignee_id
@@ -64,37 +64,37 @@ sources:
           - name: via_channel
             description: The channel the ticket was created from
           - name: via_source_from_id
-            description: The channel the ticket was created from 
+            description: The channel the ticket was created from
           - name: via_source_from_title
             description: The channel the ticket was created from
           - name: via_source_rel
-            description: The rel the ticket was created from 
+            description: The rel the ticket was created from
           - name: via_source_to_address
             description: The address of the source the ticket was created from
           - name: via_source_to_name
-            description: The name of the source the ticket was created from    
+            description: The name of the source the ticket was created from
 
       - name: group
         description: >
           When support requests arrive in Zendesk Support, they can be assigned to a Group. Groups serve as the core
           element of ticket workflow; support agents are organized into Groups and tickets can be assigned to a Group
-          only, or to an assigned agent within a Group. A ticket can never be assigned to an agent without also being 
+          only, or to an assigned agent within a Group. A ticket can never be assigned to an agent without also being
           assigned to a Group.
         freshness: null
         columns:
           - name: id
             description: Automatically assigned when creating groups
-            tests:
-                - unique
-                - not_null 
+            # tests:
+            #     - unique
+            #     - not_null
           - name: name
             description: The name of the group
 
       - name: organization
         description: >
-          Just as agents can be segmented into groups in Zendesk Support, your customers (end-users) can be segmented into 
-          organizations. You can manually assign customers to an organization or automatically assign them to an organization 
-          by their email address domain. Organizations can be used in business rules to route tickets to groups of agents or 
+          Just as agents can be segmented into groups in Zendesk Support, your customers (end-users) can be segmented into
+          organizations. You can manually assign customers to an organization or automatically assign them to an organization
+          by their email address domain. Organizations can be used in business rules to route tickets to groups of agents or
           to send email notifications.
         freshness: null
         columns:
@@ -102,7 +102,7 @@ sources:
             description: Automatically assigned when the organization is created
             tests:
                 - unique
-                - not_null 
+                - not_null
           - name: name
             description: A unique name for the organization
           - name: details
@@ -140,7 +140,7 @@ sources:
             description: Automatically assigned when the comment is created
             tests:
                 - unique
-                - not_null 
+                - not_null
           - name: body
             description: The comment string
           - name: created
@@ -167,7 +167,7 @@ sources:
             description: Automatically assigned when the user is created
             tests:
                 - unique
-                - not_null 
+                - not_null
           - name: email
             description: The user's primary email address. *Writeable on create only. On update, a secondary email is added. See Email Address
           - name: name
@@ -186,9 +186,9 @@ sources:
             description: Specifies which tickets the user has access to. Possible values are organization, groups, assigned, requested and null
 
       - name: schedule
-        description: The support schedules created with different business hours and holidays. 
+        description: The support schedules created with different business hours and holidays.
         freshness: null
-        columns: 
+        columns:
           - name: id
             description: ID automatically assigned to the schedule upon creation
           - name: name
@@ -198,35 +198,35 @@ sources:
           - name: start_time_utc
             description: Start time of the schedule, in UTC
           - name: end_time_utc
-            description: End time of the schedule, in UTC  
-          
+            description: End time of the schedule, in UTC
+
       - name: ticket_schedule
         description: The schedules applied to tickets through a trigger.
         freshness: null
-        columns: 
+        columns:
           - name: ticket_id
             description: The ID of the ticket assigned to the schedule
           - name: created_at
             description: The time the schedule was assigned to the ticket
           - name: schedule_id
             description: The ID of the schedule applied to the ticket
-      
+
       - name: ticket_tag
         description: >
           Tags are words, or combinations of words, you can use to add more context to tickets. The table lists all
           tags currently associated with a ticket.
         freshness: null
-        columns: 
+        columns:
           - name: ticket_id
             description: The ID of the ticket associated with the tag
           - name: tag
             description: The tag, or word(s), associated with the ticket
 
-      
+
       - name: ticket_field_history
         description: All fields and field values associated with tickets.
         freshness: null
-        columns: 
+        columns:
           - name: ticket_id
             description: The ID of the ticket associated with the field
           - name: field_name
@@ -237,3 +237,27 @@ sources:
             description: The value of the field
           - name: user_id
             description: The id of the user who made the update
+
+      - name: alert_recipient
+
+      - name: article
+
+      - name: call_metric
+
+      - name: domain_name
+
+      - name: forum_topic
+
+      - name: group_member
+
+      - name: satisfaction_rating
+
+      - name: ticket_alert
+
+      - name: ticket_custom_field
+
+      - name: ticket_field_option
+
+      - name: ticket_tag_history
+
+      - name: user_tag
