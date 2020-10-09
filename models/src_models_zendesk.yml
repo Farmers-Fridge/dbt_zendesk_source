@@ -154,7 +154,7 @@ models:
         description: The user's primary email address. *Writeable on create only. On update, a secondary email is added. See Email Address
         meta:
           sensitive: true
-        - name: name
+      - name: name
         description: The user's name
         meta:
           sensitive: true
