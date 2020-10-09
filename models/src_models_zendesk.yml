@@ -23,8 +23,12 @@ models:
         description: The type of this ticket, possible values are problem, incident, question or task
       - name: subject
         description: The value of the subject field for this ticket
+        meta:
+          sensitive: true
       - name: description
         description: Read-only first comment on the ticket
+        meta:
+          sensitive: true
       - name: priority
         description: The urgency with which the ticket should be addressed, possible values are urgent, high, normal and low
       - name: status
@@ -59,6 +63,15 @@ models:
         description: The address of the source the ticket was created from
       - name: source_to_name
         description: The name of the source the ticket was created from
+      - name: system_ip_address
+        meta:
+          sensitive: true
+      - name: system_latitude
+        meta:
+          sensitive: true
+      - name: system_longitude
+        meta:
+          sensitive: true
 
   - name: src_zendesk_group
     description: >
@@ -102,6 +115,8 @@ models:
             - not_null
       - name: body
         description: The comment string
+        meta:
+          sensitive: true
       - name: created_at
         description: The time the comment was created
       - name: is_public
@@ -116,6 +131,15 @@ models:
         description: Boolean field indicating if the comment is a twitter tweet
       - name: is_voice_comment
         description: Boolean field indicating if the comment is a voice comment
+      - name: from
+        meta:
+          sensitive: true
+      - name: to
+        meta:
+          sensitive: true
+      - name: transcription
+        meta:
+          sensitive: true
 
 
   - name: src_zendesk_user
@@ -128,8 +152,12 @@ models:
             - not_null
       - name: email
         description: The user's primary email address. *Writeable on create only. On update, a secondary email is added. See Email Address
-      - name: name
+        meta:
+          sensitive: true
+        - name: name
         description: The user's name
+        meta:
+          sensitive: true
       - name: is_active
         description: false if the user has been deleted
       - name: created_at
@@ -140,6 +168,12 @@ models:
         description: The user's role. Possible values are "end-user", "agent", or "admin"
       - name: time_zone
         description: The user's time zone. See Time Zone
+      - name: phone
+        meta:
+          sensitive: true
+      - name: signature
+        meta:
+          sensitive: true
       - name: ticket_restriction
         description: Specifies which tickets the user has access to. Possible values are organization, groups, assigned, requested and null
 
@@ -219,6 +253,11 @@ models:
           tests:
             - unique
             - not_null
+        - name: phone_number
+          description: This is the main support contact number is not sensitive data
+        - name: ivr_routed_to
+          meta:
+            sensitive: true
 
   - name: src_zendesk_domain_name
     description: Domains associated with our zendesk support account
