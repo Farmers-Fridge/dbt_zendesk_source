@@ -238,25 +238,25 @@ sources:
           - name: user_id
             description: The id of the user who made the update
 
-      - name: alert_recipient # added
+      - name: alert_recipient
 
-      - name: article # added
+      - name: article
 
-      - name: call_metric #added
+      - name: call_metric
 
-      - name: domain_name #added
+      - name: domain_name
 
-      - name: forum_topic # added
+      - name: forum_topic
 
-      - name: group_member # added
+      - name: group_member
 
-      - name: satisfaction_rating # added
+      - name: satisfaction_rating
 
-      - name: ticket_alert # added
+      - name: ticket_alert
 
-      - name: ticket_custom_field # added
+      - name: ticket_custom_field
 
-      - name: ticket_field_option # added
+      - name: ticket_field_option
 
       - name: ticket_tag_history
 

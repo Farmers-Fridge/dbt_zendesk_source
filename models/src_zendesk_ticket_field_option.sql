@@ -9,7 +9,7 @@ renamed as (
     select
         value,
         name,
-        default
+        "DEFAULT" -- snowflake keyword collision. Double quote makes it case sensitive
         -- _fivetran_synced
 
     from source
