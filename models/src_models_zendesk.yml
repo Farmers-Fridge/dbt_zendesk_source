@@ -282,7 +282,7 @@ models:
           description: The tag applied ticket
           tests:
               - not_null
-        - name: updated_at
+        - name: updated
           description: Timestamp the tag was updated
           tests:
             - not_null
@@ -294,4 +294,3 @@ models:
         description: The ID of the user
         tests:
           - not_null
-          - unique

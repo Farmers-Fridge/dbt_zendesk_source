@@ -84,9 +84,9 @@ sources:
         columns:
           - name: id
             description: Automatically assigned when creating groups
-            tests:
-                - unique
-                - not_null
+            # tests:
+            #     - unique
+            #     - not_null
           - name: name
             description: The name of the group
 
