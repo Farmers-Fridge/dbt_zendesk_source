@@ -28,15 +28,15 @@ By default, this package looks for your Zendesk data in the `zendesk` schema of 
 config-version: 2
 
 vars:
-    zendesk_schema: your_database_name
-    zendesk_database: your_schema_name
+    zendesk_schema: your_schema_name
+    zendesk_database: your_database_name
 ```
 
 ## Contributions
 
 Additional contributions to this package are very welcome! Please create issues
-or open PRs against `master`. Check out 
-[this post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) 
+or open PRs against `master`. Check out
+[this post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657)
 on the best workflow for contributing to a package.
 
 ## Resources:
