@@ -25,10 +25,12 @@ models:
         description: The value of the subject field for this ticket
         meta:
           sensitive: true
+          hold: true
       - name: description
         description: Read-only first comment on the ticket
         meta:
           sensitive: true
+          hold: true
       - name: priority
         description: The urgency with which the ticket should be addressed, possible values are urgent, high, normal and low
       - name: status
@@ -117,6 +119,7 @@ models:
         description: The comment string
         meta:
           sensitive: true
+          hold: true
       - name: created_at
         description: The time the comment was created
       - name: is_public
@@ -131,15 +134,16 @@ models:
         description: Boolean field indicating if the comment is a twitter tweet
       - name: is_voice_comment
         description: Boolean field indicating if the comment is a voice comment
-      - name: from
+      - name: from_number
         meta:
           sensitive: true
-      - name: to
+      - name: to_number
         meta:
           sensitive: true
-      - name: transcription
+      - name: transcription_text
         meta:
           sensitive: true
+          hold: true
 
 
   - name: src_zendesk_user
@@ -254,7 +258,9 @@ models:
             - unique
             - not_null
         - name: phone_number
-          description: This is the main support contact number is not sensitive data
+          description: This is the phone number that was contacted
+          meta:
+            sensitive: true
         - name: ivr_routed_to
           meta:
             sensitive: true
