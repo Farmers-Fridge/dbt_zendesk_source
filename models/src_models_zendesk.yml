@@ -134,10 +134,10 @@ models:
         description: Boolean field indicating if the comment is a twitter tweet
       - name: is_voice_comment
         description: Boolean field indicating if the comment is a voice comment
-      - name: from_number
+      - name: from_phone_number
         meta:
           sensitive: true
-      - name: to_number
+      - name: to_phone_number
         meta:
           sensitive: true
       - name: transcription_text

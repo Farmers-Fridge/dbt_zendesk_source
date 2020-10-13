@@ -22,9 +22,9 @@ with base as (
       transcription_status,
       recording_url,
       started_at,
-      "FROM" as from_number,
+      "FROM" as from_phone_number,
       location,
-      "TO" as to_number,
+      "TO" as to_phone_number,
       call_duration,
       call_id,
       transcription_text
