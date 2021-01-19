@@ -244,6 +244,7 @@ sources:
       - name: alert_recipient
 
       - name: article
+        freshness: null  # do not check freshness for this table
 
       - name: call_metric
 
