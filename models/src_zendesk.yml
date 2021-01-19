@@ -254,6 +254,7 @@ sources:
       - name: group_member
 
       - name: satisfaction_rating
+        freshness: null  # do not check freshness for this table
 
       - name: ticket_alert
 
