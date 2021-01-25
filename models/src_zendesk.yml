@@ -80,6 +80,9 @@ sources:
           element of ticket workflow; support agents are organized into Groups and tickets can be assigned to a Group
           only, or to an assigned agent within a Group. A ticket can never be assigned to an agent without also being
           assigned to a Group.
+        identifier: "{%- if target.type == 'snowflake' -%} GROUP {%- else -%} group {%- endif -%}"
+        quoting:
+          identifier: true
         freshness: null
         columns:
           - name: id
@@ -241,6 +244,7 @@ sources:
       - name: alert_recipient
 
       - name: article
+        freshness: null  # do not check freshness for this table
 
       - name: call_metric
 
@@ -251,6 +255,7 @@ sources:
       - name: group_member
 
       - name: satisfaction_rating
+        freshness: null  # do not check freshness for this table
 
       - name: ticket_alert
 
