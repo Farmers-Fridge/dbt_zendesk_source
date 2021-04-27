@@ -34,5 +34,5 @@ vars:
     using_domain_names:         True
     using_user_tags:            True
     using_ticket_form_history:  True
-    using_organization_tags:    True
+    using_organization_tags:    False
     using_satisfaction_ratings: True
