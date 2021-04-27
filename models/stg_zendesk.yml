@@ -65,15 +65,6 @@ models:
         description: The address of the source the ticket was created from
       - name: source_to_name
         description: The name of the source the ticket was created from
-      - name: system_ip_address
-        meta:
-          sensitive: true
-      - name: system_latitude
-        meta:
-          sensitive: true
-      - name: system_longitude
-        meta:
-          sensitive: true
 
   - name: stg_zendesk__brand
     description: >
@@ -91,7 +82,7 @@ models:
         description: The name of the brand
       - name: subdomain
         description: The subdomain of the brand
-      - name: active
+      - name: is_active
         description: If the brand is set as active
 
   - name: stg_zendesk__domain_name
@@ -173,23 +164,13 @@ models:
         description: Boolean field indicating if the comment is a twitter tweet
       - name: is_voice_comment
         description: Boolean field indicating if the comment is a voice comment
-      - name: from_phone_number
-        meta:
-          sensitive: true
-      - name: to_phone_number
-        meta:
-          sensitive: true
-      - name: transcription_text
-        meta:
-          sensitive: true
-          hold: true
 
   - name: stg_zendesk__user_tag
     description: Table containing all tags associated with a user. Only present if your account has user tagging enabled.
     columns:
       - name: user_id
         description: Reference to the user
-      - name: tag
+      - name: tags
         description: Tag associated with the user
 
   - name: stg_zendesk__user
@@ -218,12 +199,6 @@ models:
         description: The user's role. Possible values are "end-user", "agent", or "admin"
       - name: time_zone
         description: The user's time zone. See Time Zone
-      - name: phone
-        meta:
-          sensitive: true
-      - name: signature
-        meta:
-          sensitive: true
       - name: ticket_restriction
         description: Specifies which tickets the user has access to. Possible values are organization, groups, assigned, requested and null
 
@@ -264,7 +239,7 @@ models:
         description: The time of the last update of the ticket form
       - name: display_name
         description: The name of the form that is displayed to an end user
-      - name: active
+      - name: is_active
         description: If the form is set as active
       - name: name
         description: The name of the form
