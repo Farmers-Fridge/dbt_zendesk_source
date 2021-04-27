@@ -110,12 +110,6 @@ sources:
         columns:
           - name: id
             description: Automatically assigned when creating groups
-<<<<<<< HEAD
-            # tests:
-            #     - unique
-            #     - not_null
-=======
->>>>>>> 1ce94e8a742891e6775043c3fc1f657a375579fb
           - name: name
             description: The name of the group
 
@@ -273,7 +267,6 @@ sources:
           - name: tags
             description: The tag, or word(s), associated with the ticket
 
-
       - name: ticket_field_history
         description: All fields and field values associated with tickets.
         freshness: null
@@ -288,29 +281,3 @@ sources:
             description: The value of the field
           - name: user_id
             description: The id of the user who made the update
-
-      - name: alert_recipient
-
-      - name: article
-        freshness: null  # do not check freshness for this table
-
-      - name: call_metric
-
-      - name: domain_name
-
-      - name: forum_topic
-
-      - name: group_member
-
-      - name: satisfaction_rating
-        freshness: null  # do not check freshness for this table
-
-      - name: ticket_alert
-
-      - name: ticket_custom_field
-
-      - name: ticket_field_option
-
-      - name: ticket_tag_history
-
-      - name: user_tag
