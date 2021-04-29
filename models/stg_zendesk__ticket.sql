@@ -21,13 +21,26 @@ fields as (
                 staging_columns=get_ticket_columns()
             )
         }}
-        
+
+--    Fivetran's package doesn't include custom field that can be add by the Customer Service team
+--    The following are unique to FF and should not be removed
+        , -- need to add new columns
+        custom_order_number,
+        custom_shopify_order_id,
+        custom_market,
+        custom_product,
+        custom_issue_type,
+        custom_ff_channel,
+        custom_fridge_location,
+        custom_customer_selected_fridge_location,
+        custom_customer_selected_city,
+        custom_customer_selected_topic
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
         id as ticket_id,
         _fivetran_synced,
         assignee_id,
@@ -55,7 +68,17 @@ final as (
         via_source_from_title as source_from_title,
         via_source_rel as source_rel,
         via_source_to_address as source_to_address,
-        via_source_to_name as source_to_name
+        via_source_to_name as source_to_name,
+        custom_order_number,
+        custom_shopify_order_id,
+        custom_market,
+        custom_product,
+        custom_issue_type,
+        custom_ff_channel,
+        custom_fridge_location,
+        custom_customer_selected_fridge_location,
+        custom_customer_selected_city,
+        custom_customer_selected_topic
     from fields
 )
 
