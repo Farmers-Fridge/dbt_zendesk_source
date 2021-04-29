@@ -115,6 +115,7 @@ sources:
 
       - name: organization_tag
         description: The tags associated with an organization. An organization may have multiple tags.
+        freshness: null
         columns:
           - name: organization_id
             description: Reference to the organization
